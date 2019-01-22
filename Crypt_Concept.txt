@@ -1,0 +1,48 @@
+-use fgets for user input (pw, salt)
+{SOLVED}
+
+-double check user PW before accepting new entry
+
+-write user PW to file as hash
+{SOLVED}
+
+-read hash from file -> get salt from hash -> compare hash from file with PW to grant access
+
+-make buffers safe against overflow
+{SOLVED}
+
+-split programm into main file and func file
+
+-free allocated memory!!!
+{SOLVED}
+
+-add error section
+-check return value of file functions
+
+-replace malloc with ecmalloc
+
+-check PW and name length
+{SOLVED}
+
+-replace argv[1] with rndSalt
+
+-write crName and crPW to file
+{SOLVED}
+
+-cut out '\n' from Pw and Name string
+
+-2 problems in getPW():
+	*fgets doesnt ask for second input
+	*check does fail after second PW input
+{SOLVED} --> clear stdin with getchar() in while-loops
+
+
+-18characters input --> bug!
+	*exactly 18 --> look at counter, '\0' and '\n'
+{SOLVED} --> buff[19] in check label
+	
+-read for sha512:
+	*https://stackoverflow.com/questions/20058656/c-implementing-a-sha512-encryption-with-crypt3
+	
+-put crypt into own function with malloc, free mem afterwards, call crypt for second time
+{SOLVED} --> crypt always gives back same pointer, got to delete buffer manually; no use in putting crypt into seperate function
